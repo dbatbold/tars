@@ -1,0 +1,11 @@
+[package]
+name = "tars"
+version = "0.1.0"
+authors = ["Batbold Dashzeveg <dbatbold@gmail.com>"]
+repository = "https://github.com/dbatbold/tars"
+keywords = ["tar", "archive"]
+license = "MIT OR Apache-2.0"
+edition = "2024"
+
+[dependencies]
+tar = "0.4.44"
