@@ -36,11 +36,7 @@ impl Config {
             let pair: Vec<_> = line.splitn(2, '=').collect();
             if pair.len() == 2 {
                 let key = pair[0].trim();
-                let value = match pair[1].strip_suffix('\n') {
-                    Some(v) => v,
-                    None => pair[1],
-                }
-                .trim();
+                let value = pair[1].trim();
                 map.insert(key.to_string(), value.to_string());
                 continue;
             }
