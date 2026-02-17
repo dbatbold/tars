@@ -19,23 +19,25 @@ fn parse_options(conf: &mut Config) {
             "-c" => {
                 config_path = arg.to_string();
                 opt.clear();
+                continue;
             }
             _ => (),
         }
         match arg.as_str() {
             "-c" => opt = arg.clone(),
-            "-h" => print_help(),
-            _ => (),
+            "-h" => print_help(0),
+            _ => print_help(1),
         }
     }
     *conf = Config::open(&config_path);
 }
 
-fn print_help() {
+fn print_help(code: i32) {
     eprintln!(
         r#"tars
     -h              Print help
     -c <file>       Configation file path (default tars.config)
 "#
     );
+    std::process::exit(code);
 }
