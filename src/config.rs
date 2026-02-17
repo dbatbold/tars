@@ -6,6 +6,7 @@ use std::io::{BufRead, BufReader};
 pub struct Config {
     source_dir: String,
     target_dir: String,
+    test: String,
 }
 
 impl Config {
@@ -69,7 +70,8 @@ target_dir=B
         Config::parse(BufReader::new(input.as_bytes())),
         Config {
             source_dir: "A".to_string(),
-            target_dir: "B".to_string()
+            target_dir: "B".to_string(),
+            ..Config::default()
         }
     );
 }
@@ -79,13 +81,14 @@ fn test_config_whitespaces() {
     let input = "
   source_dir =A
 
-    target_dir = BB C
+    target_dir = BB C 
 ";
     assert_eq!(
         Config::parse(BufReader::new(input.as_bytes())),
         Config {
             source_dir: "A".to_string(),
-            target_dir: "BB C".to_string()
+            target_dir: "BB C".to_string(),
+            ..Config::default()
         }
     );
 }
@@ -100,7 +103,8 @@ target_dir  = B
         Config::parse(BufReader::new(input.as_bytes())),
         Config {
             source_dir: "A".to_string(),
-            target_dir: "B".to_string()
+            target_dir: "B".to_string(),
+            ..Config::default()
         }
     );
 }
@@ -118,7 +122,8 @@ target_dir = B
         Config::parse(BufReader::new(input.as_bytes())),
         Config {
             source_dir: "A".to_string(),
-            target_dir: "B".to_string()
+            target_dir: "B".to_string(),
+            ..Config::default()
         }
     );
 }
