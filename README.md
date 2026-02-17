@@ -1,4 +1,4 @@
 tars
 ====
 
-Simple TAR backup utility.
+A lightweight TAR-based utility for creating scheduled snapshot backups.

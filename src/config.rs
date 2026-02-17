@@ -44,7 +44,7 @@ impl Config {
                 // skip whitespaces
                 continue;
             }
-            eprint!("invalid config: {}", line);
+            eprintln!("invalid config: {}", line.trim());
         }
 
         let mut config = Config::default();

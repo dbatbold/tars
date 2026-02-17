@@ -8,7 +8,7 @@ fn main() {
 
     parse_options(&mut conf);
 
-    println!("{:?}", conf);
+    println!("{:#?}", conf);
 }
 
 fn parse_options(conf: &mut Config) {

@@ -1,4 +1,4 @@
-.PHONY: check build test run release format
+.PHONY: check build test run clean release format
 
 check:
 	cargo check
@@ -11,6 +11,9 @@ test:
 
 run:
 	cargo run
+
+clean:
+	cargo clean
 
 release:
 	cargo build --release
