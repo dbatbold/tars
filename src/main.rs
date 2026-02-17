@@ -28,7 +28,7 @@ fn parse_options(conf: &mut Config) {
             _ => (),
         }
     }
-    *conf = Config::parse(&config_path);
+    *conf = Config::open(&config_path);
 }
 
 fn print_help() {

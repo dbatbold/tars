@@ -1,4 +1,4 @@
-Tars
+tars
 ====
 
 Simple TAR backup utility.
